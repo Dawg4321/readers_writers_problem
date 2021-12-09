@@ -3,7 +3,7 @@
 #include <sys/sem.h>
 #include <iostream>
 
-#include "readwrite.h"
+#include "../readwrite.h"
 
 #define SEMKEY 54321
 
@@ -28,19 +28,29 @@ int main(){
     sem_wait.sem_op = -1;        // setting sem_op value to -1
                                  // this is so the semaphore value will be decremented when a wait operation occurs
     
-    sem_signal.sem_num = FILE_SEM;
+
     sem_signal.sem_flg = SEM_UNDO; // intialising operation of sem_signal sembuf
     sem_signal.sem_op = 1;         // setting sem_op value to 1
                                    // this is so the semaphore value will be incremented when a wait operation occurs
-    int reader_counter = 0;
+    
+    sem_signal.sem_num = FILE_SEM; // selecting the file control semaphore on sem_signal and sem_wait as only this sem is used
+    sem_wait.sem_num = FILE_SEM;   
+
+    int counter = 1; // counter to help determine how many write operations have occured in each program instance
 
     while(1){
-        semop(semid,&sem_wait,1);
-        
-        writeFile();
+        cout << string(43,'-') << "\n"; // line printout to help seperate each read operation
+        cout << counter++ << ". Please press enter to write to file "; // requesting the using to press enter to start a file read operation
+        cin.ignore(); // ignoring input value
 
-        semop(semid,&sem_signal,1);
+        semop(semid,&sem_wait,1); // performing wait operation on file sempahore
+                                  // this prevents readers and writers gaining access to the file until the writing is complete  
         
+        // ** ENTERING CRITICAL SECTION **
+        writeFile(); // write to file
+        // ** LEAVING CRITICAL SECTION **
+
+        semop(semid,&sem_signal,1); // performing signal operation on file sempahore
+                                    // this allows readers and writers to gain access to the file as the writing is complete  
     }
-
 }

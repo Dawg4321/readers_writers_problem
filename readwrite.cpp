@@ -1,6 +1,7 @@
 #include "readwrite.h"
 
 void readFile(){
+    
     cout << "\t***Entering Read Function***\n";
 
     ifstream file("file.txt",ios::in);
@@ -34,7 +35,7 @@ void writeFile(){
     if(file.is_open()){
         string buff;
         
-        cout << "\t** Enter a value to load to file **\n";
+        cout << "\t** Enter a value to write to file **\n\t";
         cin >> buff;
         file << buff;
 
@@ -48,4 +49,3 @@ void writeFile(){
     cin.ignore();
     cout << "\t***Leaving Write Function***\n";
 }
-

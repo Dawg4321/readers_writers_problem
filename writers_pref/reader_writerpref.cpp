@@ -2,17 +2,19 @@
 #include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
+
 #include <iostream>
 
 #include "../readwrite.h"
 
-#define SEMKEY 54321
-#define SHMKEY 12345
+#define SEMKEY 86421
+#define SHMKEY 24680
 
-#define NUM_SEMS 2
+#define NUM_SEMS 4
 
 #define READER_SEM 0
 #define FILE_SEM 1
+#define TRYREAD_SEM 2
 
 using namespace std;
 
@@ -47,9 +49,14 @@ int main(){
     int counter = 1; // counter to help determine how many read operations have occured in each program instance
 
     while(1){ // infinite loop to allow file reads to continue until the program closes
+
         cout << string(43,'-') << "\n"; // line printout to help seperate each read operation
         cout << counter++ << ". Please press enter to read from the file "; // requesting the using to press enter to start a file read operation
         cin.ignore(); // ignoring input value
+
+        sem_wait.sem_num = TRYREAD_SEM; // selecting try to read semaphore
+        semop(semid,&sem_wait,1); // performing wait operation on try to read semaphore
+                                  // this ensures readers can only read after all writers are done writing
 
         sem_wait.sem_num = READER_SEM; // selecting reader control semaphore
         semop(semid,&sem_wait,1); // performing wait operation on reader control semaphore
@@ -66,6 +73,10 @@ int main(){
         semop(semid,&sem_signal,1); // performing signal operation on reader control semaphore
                                     // this allows the next reading in the queue to access the shared memory
         
+        sem_signal.sem_num = READER_SEM; // selecting try to read semaphore
+        semop(semid,&sem_signal,1); // performing wait operation on try to read semaphore
+                                  // this ensures readers can only read after all writers are done writing
+
         // ** ENTERING CRITICAL SECTION **
         readFile(); // performing file read
         // ** LEAVING CRITICAL SECTION **

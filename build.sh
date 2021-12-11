@@ -28,7 +28,7 @@ mv writer-w_pref ./build/writers_pref # moving executables to writers preference
 mv reader-w_pref ./build/writers_pref
 
 echo "Creating Text Files..."
-touch ./build/readers_pref/file.txt
+touch ./build/readers_pref/file.txt # creating text files for use by executables
 touch ./build/writers_pref/file.txt
 
 echo "Removing excess build files..." 

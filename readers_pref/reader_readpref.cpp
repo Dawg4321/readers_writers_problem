@@ -1,20 +1,4 @@
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <sys/sem.h>
-#include <sys/shm.h>
-#include <iostream>
-
-#include "../readwrite.h"
-
-#define SEMKEY 54321
-#define SHMKEY 12345
-
-#define NUM_SEMS 2
-
-#define READER_SEM 0
-#define FILE_SEM 1
-
-using namespace std;
+#include "readpref.h"
 
 int main(){
 

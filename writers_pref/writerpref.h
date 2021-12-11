@@ -16,6 +16,8 @@
 
 #define NUM_SEMS 4 // number of POSIX semaphores needed
 
+// defining use of each semaphore
+// the following numbers correspond to the POSIX semaphores
 #define READER_SEM 0 // READER_SEM controls shared memory between readers
 #define FILE_SEM 1 // FILE_SEM controls file.txt and ensures readers and writers aren't interacting with the file simultaneously 
 #define TRYREAD_SEM 2 // TRYREAD_SEM ensures writers have a higher priority than readers when accessing file.txt

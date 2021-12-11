@@ -1,12 +1,21 @@
 #include "readwrite.h"
 
+/* ~~~~~~~~~~~~~~~~~~~~readFile~~~~~~~~~~~~~~~~~~~~
+
+    Function which reads and prints contents of text file.
+
+    NOTE: Text file must be called file.txt
+   
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 void readFile(){
     
-    cout << "\t***Entering Read Function***\n";
+    cout << "\t*** Entering Read Function ***\n";
 
     ifstream file("file.txt",ios::in); // opening input file stream
 
-    if(file.is_open()){
+    if(file.is_open()){ // successfully opened file.txt
+    
         cout << "\t** File Contents: **\n";
 
         string buff; // buffer to store read data
@@ -17,20 +26,27 @@ void readFile(){
         file.close(); // closing file stream
         cout << "\t**\n";
     }
-    else{
+    else{ // failed to open file.txt
         cout << "\t** ERROR: Failed to open file.txt **\n";
-
     }
 
     cout << "\tPress enter to leave the read function "; // asking using to press enter to exit read function
     cin.ignore();
-    cout << "\t***Leaving Read Function***\n";
+    cout << "\t*** Leaving Read Function ***\n";
     
     return; // returning from function
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~writeFile~~~~~~~~~~~~~~~~~~~~
+
+    Function which appends a text file with iostream inputs.
+
+    NOTE: Text file must be called file.txt
+    
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 void writeFile(){
-    cout << "\t***Entering Write Function***\n";
+    cout << "\t*** Entering Write Function ***\n";
 
     ofstream file("file.txt",std::ios::out | std::ios::app); // opening output file stream
 
@@ -50,7 +66,7 @@ void writeFile(){
     }
     cout << "\tPress enter to leave the write function "; // asking using to press enter to exit read function
     cin.ignore();
-    cout << "\t***Leaving Write Function***\n";
+    cout << "\t*** Leaving Write Function ***\n";
 
     return;  // returning from function
 }

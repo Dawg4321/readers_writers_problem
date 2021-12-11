@@ -4,11 +4,10 @@
 #include <fstream>
 #include <iostream>
 
-
 using namespace std;
 
-void readFile();
+void readFile(); // function which reads contents of file.txt and outputs to user
 
-void writeFile();
+void writeFile(); // function which appends file.txt with user input
 
 #endif

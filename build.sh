@@ -11,7 +11,7 @@ if [ ! -d "./build/writers_pref" ];then # ensuring writers preference build dire
 fi
 echo "Compiling readwrite.cpp..."
 g++ -c ./readwrite/readwrite.cpp -o temp # compiling readwrite.cpp
-                             # this will be linked to future compilations
+                                         # this will be linked to future compilations
 
 echo "Compiling and Linking Readers Preference..."
 g++ readers_pref/writer_readpref.cpp temp -o writer-r_pref # compiling readers preference
@@ -35,4 +35,4 @@ echo "Removing excess build files..."
 rm temp # removing readwrite.cpp compilation files
 
 echo "Code Successfully Compiled and Ready to Run!"
-echo "Please run the executables created in the Build Directory."
+echo "Please run the executables created in /build to test code."

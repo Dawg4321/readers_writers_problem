@@ -1,22 +1,4 @@
-#include <sys/types.h>
-#include <sys/ipc.h>
-#include <sys/sem.h>
-#include <sys/shm.h>
-
-#include <iostream>
-
-#include "../readwrite.h"
-
-#define SEMKEY 86421
-#define SHMKEY 12468
-
-#define NUM_SEMS 2
-
-#define FILE_SEM 1
-#define TRYREAD_SEM 2
-#define WRITER_SEM 3
-
-using namespace std;
+#include "writerpref.h"
 
 int main(){
 
@@ -40,7 +22,7 @@ int main(){
 
     int *writer_counter;
 
-    int shmid = shmget(SHMKEY,sizeof(*writer_counter),0777|IPC_CREAT); // creating 4 bytes (size of reader_counter integer) of shared memory 
+    int shmid = shmget(WRITESHMKEY,sizeof(*writer_counter),0777|IPC_CREAT); // creating 4 bytes (size of reader_counter integer) of shared memory 
 
     writer_counter = (int*)shmat(shmid, 0, 0); // assigning the address of shared memory to reader_counter
     

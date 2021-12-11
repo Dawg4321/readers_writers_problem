@@ -10,7 +10,7 @@ if [ ! -d "./build/writers_pref" ];then # ensuring writers preference build dire
     mkdir -p build/writers_pref # making writers preference build directory 
 fi
 echo "Compiling readwrite.cpp..."
-g++ -c readwrite.cpp -o temp # compiling readwrite.cpp
+g++ -c ./readwrite/readwrite.cpp -o temp # compiling readwrite.cpp
                              # this will be linked to future compilations
 
 echo "Compiling and Linking Readers Preference..."

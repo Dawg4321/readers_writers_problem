@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Preparing to Compile Readers-Writers-Problem..."
+
 if [ ! -d "./build/readers_pref" ];then # ensuring readers preference build director exists
     mkdir -p build/readers_pref # making readers preference build directory 
 fi
@@ -25,5 +27,12 @@ g++ writers_pref/reader_writerpref.cpp temp -o reader-w_pref
 mv writer-w_pref ./build/writers_pref # moving executables to writers preference build folder
 mv reader-w_pref ./build/writers_pref
 
+echo "Creating Text Files..."
+touch ./build/readers_pref/file.txt
+touch ./build/writers_pref/file.txt
+
 echo "Removing excess build files..." 
 rm temp # removing readwrite.cpp compilation files
+
+echo "Code Successfully Compiled and Ready to Run!"
+echo "Please run the executables created in the Build Directory."

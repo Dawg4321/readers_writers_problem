@@ -20,27 +20,19 @@ g++ -c ./readwrite/readwrite.cpp -o temp # compiling readwrite.cpp
                                          # this will be linked to future compilations
 
 echo "Compiling and Linking Readers Preference..."
-g++ readers_pref/writer_readpref.cpp temp -o ../writer-r_pref # compiling readers preference code
-g++ readers_pref/reader_readpref.cpp temp -o ../reader-r_pref
-g++ readers_pref/initialization_readpref.cpp -o ../initialization-r_pref
+g++ readers_pref/writer_readpref.cpp temp -o ../build/readers_pref/writer-r_pref # compiling readers preference code
+g++ readers_pref/reader_readpref.cpp temp -o ../build/readers_pref/reader-r_pref
+g++ readers_pref/initialization_readpref.cpp -o ../build/readers_pref/initialization-r_pref
 
 echo "Compiling and Linking Writers Preference..."
-g++ writers_pref/writer_writerpref.cpp temp -o ../writer-w_pref # compiling writers preference
-g++ writers_pref/reader_writerpref.cpp temp -o ../reader-w_pref
-g++ writers_pref/initialization_writerpref.cpp -o ../initialization-w_pref
+g++ writers_pref/writer_writerpref.cpp temp -o ../build/writers_pref/writer-w_pref # compiling writers preference
+g++ writers_pref/reader_writerpref.cpp temp -o ../build/writers_pref/reader-w_pref
+g++ writers_pref/initialization_writerpref.cpp -o ../build/writers_pref/initialization-w_pref
 
 echo "Removing Excess Build files..." 
 rm temp # removing readwrite.cpp compilation files
 
 cd .. # changing to parent directory
-
-mv writer-r_pref ./build/readers_pref # moving executables to readers preference build folder
-mv reader-r_pref ./build/readers_pref
-mv initialization-r_pref ./build/readers_pref
-
-mv writer-w_pref ./build/writers_pref # moving executables to writers preference build folder
-mv reader-w_pref ./build/writers_pref
-mv initialization-w_pref ./build/writers_pref
 
 echo "Creating Text Files..."
 touch ./build/readers_pref/file.txt # creating text files for use by executables

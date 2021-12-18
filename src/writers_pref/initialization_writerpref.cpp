@@ -2,10 +2,14 @@
 
 int main(){
 
+    cout << "Intializing Semaphores...\n";
+
     int semid = semget(SEMKEY,NUM_SEMS,0777|IPC_CREAT); // allocating two semaphores for usage 
 
     for(int i = 0; i < NUM_SEMS; i++) // intializing the value of each semaphore to 1
         semctl(semid,i,SETVAL,1);
+
+    cout << "Intializing Reader Shared Memory...\n";
 
     int *reader_counter; // creating pointer to read_counter integer
                          // this will be used as variable to reference shared memory of readers
@@ -16,6 +20,8 @@ int main(){
     
     *reader_counter = 0; // ensuring reader_counter is initialised to 0 before read operations
 
+    cout << "Intializing Writer Shared Memory...\n";
+
     int *writer_counter; // creating pointer to writer_counter integer
                          // this will be used as variable to reference shared memory of writers
     
@@ -24,4 +30,6 @@ int main(){
     writer_counter = (int*)shmat(shmid2, 0, 0); // assigning the address of shared memory to writer_counter
     
     *writer_counter = 0; // ensuring writer_counter is initialised to 0 before write operations
+
+    cout << "** Intialization Complete! **\nPlease feel free to run any readers and writers now!\n";
 }

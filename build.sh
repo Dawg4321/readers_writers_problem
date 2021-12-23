@@ -38,7 +38,7 @@ g++ writers_pref/initialization_writerpref.cpp -o ".$writer_dir/initialization-w
 echo "Removing Excess Build files..." 
 rm temp # removing readwrite.cpp compilation files
 
-cd .. # changing to parent directory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
+cd .. # changing to parent directory
 
 
 echo "Creating Text Files..."

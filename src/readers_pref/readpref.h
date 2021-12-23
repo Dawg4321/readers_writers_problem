@@ -8,8 +8,6 @@
 
 #include <iostream>
 
-#include "../readwrite/readwrite.h"
-
 #define SEMKEY 54321 // keys for shared memory
 #define SHMKEY 12345
 

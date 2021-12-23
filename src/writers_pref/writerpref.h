@@ -8,8 +8,6 @@
 
 #include <iostream>
 
-#include "../readwrite/readwrite.h"
-
 #define SEMKEY 86421 // semaphore generation key
 #define READSHMKEY 24680 // reader shared memory generation key
 #define WRITESHMKEY 12468 // writer shared memory generation key

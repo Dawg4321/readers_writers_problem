@@ -46,4 +46,4 @@ touch "$reader_dir/file.txt" # creating text files for use by executables
 touch "$writer_dir/file.txt" 
 
 echo "Code Successfully Compiled and Ready to Run!"
-echo "Please run the executables created in /build to test code."
+echo "Please run the executables created in ./build/ to test code."

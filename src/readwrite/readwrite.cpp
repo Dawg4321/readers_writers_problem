@@ -66,7 +66,8 @@ void writeFile(){
     }
     cout << "\tPress enter to leave the write function "; // asking using to press enter to exit read function
     cin.ignore();
-    cout << "\n\t*** Leaving Write Function ***\n";
+    cin.ignore();
+    cout << "\t*** Leaving Write Function ***\n";
 
     return;  // returning from function
 }

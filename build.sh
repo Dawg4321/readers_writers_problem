@@ -1,11 +1,15 @@
 #!/bin/bash
 
+echo "Preparing to Compile Readers-Writers-Problem..."
+
 dir="./build" # directory to build to
 
 reader_dir="${dir}/readers_pref" # sub directories for readers and writers preference
 writer_dir="${dir}/writers_pref"
 
-echo "Preparing to Compile Readers-Writers-Problem..."
+starting_text="Hello\nRay!\n" # starting text to include in file.txt
+
+echo "Removing Current Contents of ./build/..."
 
 if [ ! -d $reader_dir  ];then # ensuring readers preference build director exists
     mkdir -p $reader_dir # making readers preference build directory
@@ -41,9 +45,8 @@ rm temp # removing readwrite.cpp compilation files
 cd .. # changing to parent directory
 
 
-echo "Creating Text Files..."
-touch "$reader_dir/file.txt" # creating text files for use by executables
-touch "$writer_dir/file.txt" 
+echo "Creating Text Files..." # creating text files with starting_text for use by executables
+printf $starting_text | tee "$reader_dir/file.txt" "$writer_dir/file.txt" > /dev/null
 
 echo "Code Successfully Compiled and Ready to Run!"
 echo "Please run the executables created in ./build/ to test code."

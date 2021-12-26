@@ -2,7 +2,7 @@
 
 ## Compilation
 
-Code requires the use of linux as _/sys/shm.h_ and _/sys/sem.h_. To build the code, run the following:
+Code requires the use of linux as Sys V sempahores and shared memory are used. To build the code, run the following:
 ```
 sh build.sh
 ```

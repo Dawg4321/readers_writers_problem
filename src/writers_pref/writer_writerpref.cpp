@@ -28,7 +28,7 @@ int main(){
 
     // semaphore initialization
 
-    int semid = semget(SEMKEY,NUM_SEMS,0777); // allocating two semaphores for usage 
+    int semid = semget(SEMKEY,NUM_SEMS,0666); // allocating two semaphores for usage 
 
     struct sembuf sem_signal, sem_wait; // creating two sembuff structures
                                         // these are used for signal and wait operations on file control semaphore
@@ -47,7 +47,7 @@ int main(){
     int *writer_counter; // creating pointer to writer_counter integer
                          // this will be used as variable to reference shared memory of writers
 
-    int shmid = shmget(WRITESHMKEY,sizeof(*writer_counter),0777); // creating 4 bytes (size of reader_counter integer) of shared memory 
+    int shmid = shmget(WRITESHMKEY,sizeof(*writer_counter),0666); // creating 4 bytes (size of reader_counter integer) of shared memory 
 
     writer_counter = (int*)shmat(shmid, 0, 0); // assigning the address of shared memory to reader_counter
 

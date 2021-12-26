@@ -22,7 +22,7 @@ int main(){
 
     // semaphore initialization
 
-    int semid = semget(SEMKEY,NUM_SEMS,0777); // allocating two semaphores for usage 
+    int semid = semget(SEMKEY,NUM_SEMS,0666); // allocating two semaphores for usage 
 
     struct sembuf sem_signal, sem_wait; // creating two sembuff structures
                                         // these are used for signal and wait operations on file control semaphore

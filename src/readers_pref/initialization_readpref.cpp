@@ -1,12 +1,5 @@
 #include "readpref.h"
 
-    /* -------------------- Intializatoin --------------------
-        
-        ** Operation **
-
-
-       ------------------------------------------------------- */
-
 int main(){
     
     cout << "Intializing Semaphores...\n";

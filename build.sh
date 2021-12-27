@@ -35,9 +35,9 @@ g++ readers_pref/reader_readpref.cpp temp -o ".$reader_dir/reader-r_pref"
 g++ readers_pref/initialization_readpref.cpp -o ".$reader_dir/initialization-r_pref"
 
 echo "Compiling and Linking Writers Preference..."
-g++ writers_pref/writer_writerpref.cpp temp -o ".$writer_dir/writer-w_pref" # compiling writers preference
-g++ writers_pref/reader_writerpref.cpp temp -o ".$writer_dir/reader-w_pref"
-g++ writers_pref/initialization_writerpref.cpp -o ".$writer_dir/initialization-w_pref"
+g++ writers_pref/writer_writepref.cpp temp -o ".$writer_dir/writer-w_pref" # compiling writers preference
+g++ writers_pref/reader_writepref.cpp temp -o ".$writer_dir/reader-w_pref"
+g++ writers_pref/initialization_writepref.cpp -o ".$writer_dir/initialization-w_pref"
 
 echo "Removing Excess Build files..." 
 rm temp # removing readwrite.cpp compilation files

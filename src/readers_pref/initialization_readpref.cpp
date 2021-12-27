@@ -1,3 +1,7 @@
+// initialization_readpref.cpp
+// written by Ryan Wiebe
+// file to initialze shared memory and semaphores in readers-preference solution
+
 #include "readpref.h"
 
 /* --------------------initialization_readpref--------------------

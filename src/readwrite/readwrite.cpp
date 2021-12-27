@@ -1,3 +1,7 @@
+// readwrite.cpp
+// written by Ryan Wiebe
+// file used to read and write data in readers-writers problem solutions
+
 #include "readwrite.h"
 
 /* ~~~~~~~~~~~~~~~~~~~~readFile~~~~~~~~~~~~~~~~~~~~

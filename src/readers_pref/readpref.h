@@ -1,3 +1,7 @@
+// readpref.h
+// written by Ryan Wiebe
+// header file used by readers-preference solution
+
 #ifndef READPREF_H
 #define READPREF_H
 

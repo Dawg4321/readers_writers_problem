@@ -1,3 +1,7 @@
+// readwrite.h
+// written by Ryan Wiebe
+// header used to define functions in readwrite.cpp
+
 #ifndef READWRITE_H
 #define READWRITE_H
 

@@ -1,3 +1,7 @@
+// writepref.h
+// written by Ryan Wiebe
+// header file used by writers-preference solution
+
 #ifndef WRITEPREF_H
 #define WRITEPREF_H
 

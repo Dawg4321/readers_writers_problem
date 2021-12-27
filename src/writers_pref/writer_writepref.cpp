@@ -1,3 +1,7 @@
+// writer_writepref.cpp
+// written by Ryan Wiebe
+// file to run writer used in writers-preference solution
+
 #include "writepref.h"
 #include "../readwrite/readwrite.h"
 

@@ -1,3 +1,7 @@
+// initialization_writepref.cpp
+// written by Ryan Wiebe
+// file to initialze shared memory and semaphores in writers-preference solution
+
 #include "writepref.h"
 
 /* --------------------initialization_writepref--------------------

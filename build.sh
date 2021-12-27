@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# build.sh
+# written by Ryan Wiebe
+# used to compile readers-writers problem solutions
+
 echo "Preparing to Compile Readers-Writers-Problem..."
 
 dir="./build" # directory to build to

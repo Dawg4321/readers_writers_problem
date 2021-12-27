@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// function declarations
 void readFile(); // function which reads contents of file.txt and outputs to user
 
 void writeFile(); // function which appends file.txt with user input

@@ -8,10 +8,12 @@
 
 #include <iostream>
 
-#define SEMKEY 54321 // keys for shared memory
-#define SHMKEY 12345
+// defining keys and number of semaphores
+// these are used when gathering shared memory and semaphores
+#define SEMKEY 54321 // semaphore generatoin key
+#define SHMKEY 12345 // shared memory generation key
 
-#define NUM_SEMS 2 // number of POSIX semaphores needed
+#define NUM_SEMS 2 // number of Sys V semaphores needed
 
 // defining use of each semaphore
 // the following numbers correspond to the POSIX semaphores

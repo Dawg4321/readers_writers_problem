@@ -46,7 +46,7 @@ int main(){
     int *reader_counter; // creating pointer to read_counter integer
                          // this will be used as variable to reference shared memory of readers
 
-    int shmid = shmget(SHMKEY,sizeof(*reader_counter),0666); // creating 4 bytes (size of reader_counter integer) of shared memory 
+    int shmid = shmget(SHMKEY,sizeof(*reader_counter),0666); // creating 4 bytes of shared memory (size of reader_counter integer)
 
     reader_counter = (int*)shmat(shmid, 0, 0); // assigning the address of shared memory to reader_counter
     

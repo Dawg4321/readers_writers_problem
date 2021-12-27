@@ -42,5 +42,5 @@ int main(){
 
     cout << "** Intialization Complete! **\nPlease feel free to run any readers and writers now!\n";
 
-    return;
+    return 0;
 }

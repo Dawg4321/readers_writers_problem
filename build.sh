@@ -7,7 +7,7 @@ dir="./build" # directory to build to
 reader_dir="${dir}/readers_pref" # sub directories for readers and writers preference
 writer_dir="${dir}/writers_pref"
 
-starting_text="Hello\nRay!\n" # starting text to include in file.txt
+starting_text="Hello\nRay!" # starting text to include in file.txt
 
 echo "Removing Current Contents of ./build/..."
 
